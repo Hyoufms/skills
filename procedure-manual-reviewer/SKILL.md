@@ -61,10 +61,12 @@ Follow this editing order:
 6. Review and edit headers.
 7. Review and edit procedure steps.
 8. Check procedure continuity.
-9. Check header and procedure numbering.
-10. Check images and captions.
-11. Preserve Markdown and non-text elements.
-12. Prepare the final output.
+9. Check grammar and spelling.
+10. Check Markdown syntax.
+11. Check header and procedure numbering.
+12. Check images and captions.
+13. Preserve Markdown and non-text elements.
+14. Prepare the final output.
 
 ### 1. Inspect the Manual Structure
 
@@ -243,7 +245,36 @@ When continuity is broken, add the minimum missing step, precondition, or transi
 
 Ask the user before adding speculative steps if the missing operation cannot be inferred from the surrounding manual or screenshots.
 
-### 9. Check Header and Procedure Numbering
+### 9. Check Grammar and Spelling
+
+Check grammar and spelling while preserving the original writing style.
+
+Confirm that:
+
+- Japanese grammar, particles, and sentence endings are natural for the document's existing style.
+- Sentences are complete and do not omit required subjects, objects, or conditions when that omission would make the procedure unclear.
+- Product names, target-system terms, technical terms, abbreviations, and English words are spelled consistently.
+- Katakana, kanji, full-width, and half-width forms are consistent when they refer to the same term.
+- Corrections do not rewrite literal UI labels or change the intended operation.
+
+Fix clear grammar and spelling errors directly. When a correction may change meaning, flag it or ask the user instead of guessing.
+
+### 10. Check Markdown Syntax
+
+Check Markdown syntax separately from grammar and spelling.
+
+Confirm that:
+
+- Headings, numbered lists, bullet lists, tables, links, images, emphasis, and code blocks remain valid Markdown.
+- Table rows contain the expected number of cells and still render as a table.
+- List indentation does not accidentally change nesting.
+- Code fences are balanced and code block contents are not edited unless requested.
+- Link and image syntax uses valid brackets, parentheses, and paths.
+- Intentional image-line trailing spaces are preserved.
+
+Fix clear Markdown syntax errors directly, but do not run broad formatters that may remove intentional spacing or alter unrelated Markdown.
+
+### 11. Check Header and Procedure Numbering
 
 Prefer this section numbering pattern:
 
@@ -265,7 +296,7 @@ Correct obvious local numbering inconsistencies when editing the document.
 
 Ask the user before large renumbering if the document appears to have intentional gaps, cross-references, image filename dependencies, anchors, or links that depend on existing numbers.
 
-### 10. Check Images and Captions
+### 12. Check Images and Captions
 
 For images inside a procedure section, check both the referenced Markdown image and the actual image filename.
 
@@ -304,7 +335,7 @@ Treat the image reference line's trailing space as intentional. Do not remove it
 
 When the caption is missing, add one if the image context makes the caption clear. If the caption cannot be inferred safely, flag it for the user.
 
-### 11. Preserve Markdown and Non-Text Elements
+### 13. Preserve Markdown and Non-Text Elements
 
 Preserve:
 
@@ -319,7 +350,7 @@ Preserve:
 
 Only edit these when the user explicitly requests it or when terminology inside visible manual text must be corrected.
 
-### 12. Final Output
+### 14. Final Output
 
 After editing, provide:
 
@@ -327,6 +358,7 @@ After editing, provide:
 - Updated or created terminology table location
 - Any terms intentionally left unchanged because they appear to be UI labels
 - Any procedure continuity fixes, added preconditions, or unresolved continuity questions
+- Any grammar, spelling, or Markdown syntax corrections
 - Any image filename, reference, or caption corrections
 - Any unresolved terminology questions
 
@@ -344,6 +376,10 @@ Before finalizing, confirm:
 - Procedure-step terminology is consistent
 - Procedure continuity is preserved between adjacent steps and related sections
 - Required preconditions, selections, inputs, and confirmations are not skipped
+- Grammar and spelling were checked without changing the original style
+- Product names, technical terms, abbreviations, and English words are spelled consistently
+- Markdown syntax remains valid
+- Tables, lists, links, images, emphasis, and code blocks still render correctly
 - Procedure steps use `1.`, `2.`, `3.` numbering
 - Original writing style was preserved
 - Markdown structure is unchanged
@@ -365,6 +401,8 @@ Ask the user when:
 - Multiple preferred terms are equally plausible
 - A missing procedure step cannot be inferred safely
 - The expected starting state for a section is unclear
+- A grammar or spelling correction may change the intended meaning
+- Markdown syntax appears intentionally unusual or tool-specific
 - Image caption text cannot be inferred from surrounding context
 - Image numbering conflicts with intentional cross-references or an existing naming rule
 - A large stylistic rewrite would be needed
