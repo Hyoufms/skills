@@ -1,0 +1,4 @@
+interface:
+  display_name: "Procedure Manual Reviewer"
+  short_description: "Review and edit Markdown procedure manuals"
+  default_prompt: "Use $procedure-manual-reviewer to review and revise this Markdown procedure manual while preserving UI labels and original style."
