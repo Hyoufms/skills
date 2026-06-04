@@ -1,6 +1,6 @@
 # Procedure Manual Reviewer
 
-English | [繁體中文](./README.md)
+English | [中文](./README.md)
 
 `procedure-manual-reviewer` is a Codex skill for reviewing and directly revising Markdown-based Japanese procedure documents and user manuals. It focuses on terminology consistency, procedural clarity, section numbering, screenshot references, and caption formatting.
 

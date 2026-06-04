@@ -1,6 +1,6 @@
 # Diunama Skills
 
-English | [繁體中文](./README.md)
+English | [中文](./README.md)
 
 This repository collects Codex skills. Each skill lives in its own directory and includes its `SKILL.md`, configuration files, and documentation.
 
