@@ -1,5 +1,7 @@
 # Diunama Skills
 
+[English](./README.en.md) | 繁體中文
+
 這個專案用來收納 Codex skills。每個 skill 會放在自己的資料夾中，並包含對應的 `SKILL.md`、設定檔與說明文件。
 
 ## Skills

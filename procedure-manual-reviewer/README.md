@@ -1,5 +1,7 @@
 # Procedure Manual Reviewer
 
+[English](./README.en.md) | 繁體中文
+
 `procedure-manual-reviewer` 是一個 Codex skill，用來審閱並直接修訂 Markdown 格式的日文手順書與使用者手冊，重點放在術語一致性、操作步驟清晰度、章節編號、截圖引用與圖說格式。
 
 ## 內容
