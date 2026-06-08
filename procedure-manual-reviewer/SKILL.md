@@ -47,7 +47,7 @@ Prefer the standard manual format unless the user provides a different project c
 2. xxx
 ```
 
-Do not run Markdown formatters or whitespace cleanup that may remove intentional image-line trailing spaces.
+Do not run Markdown formatters or whitespace cleanup that may collapse the required blank line between an image reference and its caption or remove the two leading spaces before caption text.
 
 ## Workflow
 
@@ -270,7 +270,8 @@ Confirm that:
 - List indentation does not accidentally change nesting.
 - Code fences are balanced and code block contents are not edited unless requested.
 - Link and image syntax uses valid brackets, parentheses, and paths.
-- Intentional image-line trailing spaces are preserved.
+- Required blank lines between image references and captions are preserved.
+- Caption lines keep the required two leading spaces before the italic caption text.
 
 Fix clear Markdown syntax errors directly, but do not run broad formatters that may remove intentional spacing or alter unrelated Markdown.
 
@@ -320,18 +321,19 @@ Check that:
 - The image extension matches the actual file extension.
 - The filename remains readable after the sequence number, for example `1.1.1-1login-screen.png`.
 
-Require a caption immediately below each image.
+Require a caption for each image, placed after one blank line below the image reference.
 
 Use this format:
 
 ```markdown
-![xxxx](1.1.1-1xxxx.png) 
-*xxxx*
+![xxxx](1.1.1-1xxxx.png)
+
+  *xxxx*
 ```
 
-Keep a trailing space after the image reference line so the caption starts on the next line according to the project convention.
+Keep exactly one blank line between the image reference and the caption according to the project convention.
 
-Treat the image reference line's trailing space as intentional. Do not remove it during cleanup or formatting.
+Start the caption line with two spaces, then italic caption text such as `  *xxxx*`. Do not remove the blank line or the two leading spaces during cleanup or formatting.
 
 When the caption is missing, add one if the image context makes the caption clear. If the caption cannot be inferred safely, flag it for the user.
 
@@ -386,8 +388,8 @@ Before finalizing, confirm:
 - Numbered lists remain valid
 - Image filenames match the containing section number and sequence pattern
 - Image references point to the correct files
-- Each image has an immediate caption line
-- Image reference lines include the trailing space required by the project convention
+- Each image has a caption after one blank line
+- Caption lines begin with two spaces and italic caption text
 - Relative image paths were resolved from the manual file's directory
 - Links, images, tables, and code blocks are intact
 - Ambiguous terminology decisions are reported
